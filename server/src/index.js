@@ -49,7 +49,7 @@ app.post('/api/execute', async (req, res) => {
 });
 
 // SPA fallback.
-app.get('*', (req, res) => {
+app.use((req, res) => {
   res.sendFile(path.join(clientDist, 'index.html'));
 });
 
